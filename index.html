@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية - الحاج محيي الدين السيد علي</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #f4f7f6 0%, #e2ebf0 100%);
+            color: #2c3e50;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #16a085;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 15px;
+        }
+        select {
+            font-family: 'Cairo', sans-serif;
+            font-size: 18px;
+            padding: 10px;
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #bdc3c7;
+            margin-bottom: 25px;
+            outline: none;
+            color: #34495e;
+        }
+        .counter-display {
+            font-size: 64px;
+            font-weight: bold;
+            color: #16a085;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid #e2ebf0;
+            letter-spacing: 2px;
+        }
+        .btn-tap {
+            background-color: #16a085;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(22, 160, 133, 0.3);
+            transition: all 0.1s ease;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            margin-bottom: 20px;
+        }
+        .btn-tap:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 10px rgba(22, 160, 133, 0.2);
+        }
+        .btn-reset {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+        }
+        .duaa-card {
+            background-color: #f1f8f6;
+            border-right: 4px solid #16a085;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 25px;
+            text-align: right;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>صدقة جارية عن روح المغفور له بإذن الله</h1>
+    <h2>الحاج محيي الدين السيد علي</h2>
+    
+    <select id="dhikrSelect" onchange="resetCounter()">
+        <option value="سبحان الله">سبحان الله</option>
+        <option value="الحمد لله">الحمد لله</option>
+        <option value="لا إله إلا الله">لا إله إلا الله</option>
+        <option value="الله أكبر">الله أكبر</option>
+        <option value="أستغفر الله العظيم">أستغفر الله العظيم</option>
+        <option value="اللهم صلِّ وسلم على نبينا محمد">اللهم صلِّ وسلم على نبينا محمد</option>
+    </select>
+
+    <div class="counter-display" id="counter">0</div>
+    
+    <button class="btn-tap" onclick="increment()">اضغط للتسبيح</button>
+    <br>
+    <button class="btn-reset" onclick="resetCounter()">إعادة ضبط العداد</button>
+
+    <div class="duaa-card">
+        <strong>دعاء للمتوفى:</strong><br>
+        اللهم اغفر له وارحمه، وعافه واعف عنه، وأكرم نزله، ووسع مدخله، واغسله بالماء والثلج والبرد، ونقه من الخطايا كما ينقى الثوب الأبيض من الدنس. اللهم اجعل قبره روضة من رياض الجنة واجعل هذا العمل في ميزان حسناته.
+    </div>
+    
+    <div class="footer">الدال على الخير كفاعله - انشر تؤجر</div>
+</div>
+
+<script>
+    let count = 0;
+    const counterElement = document.getElementById('counter');
+
+    function increment() {
+        count++;
+        counterElement.innerText = count;
+        // إهتزاز خفيف للهواتف التي تدعم ذلك عند الضغط
+        if (navigator.vibrate) {
+            navigator.vibrate(15);
+        }
+    }
+
+    function resetCounter() {
+        count = 0;
+        counterElement.innerText = count;
+    }
+</script>
+
+</body>
+</html>
